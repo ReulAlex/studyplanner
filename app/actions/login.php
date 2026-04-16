@@ -16,14 +16,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['user_id'] = $user['id'];
             $_SESSION['username'] = $user['username'];
 
-            header("Location: ../dashboard.php");
+            header("Location: ../../dashboard.php");
             exit();
         } else {
-            header("Location: ../login.php?error=parola");
+            header("Location: ../../login.php?error=parola");
             exit();
         }
     } else {
-        header("Location: ../login.php?error=email");
+        header("Location: ../../login.php?error=email");
         exit();
     }
 }

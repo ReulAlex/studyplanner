@@ -23,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             session_start();
             $_SESSION['user_id'] = $user_id;
             $_SESSION['username'] = $username;
-            header("Location: ../dashboard.php");
+            header("Location: ../../dashboard.php");
             exit();
         } else {
             echo "Eroare: " . $conn->error;
