@@ -1,0 +1,77 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --container-max: 1140px;
+  --bg: #f5f5f5;
+  --surface: #ffffff;
+  --muted: #6b7280;
+  --text: #111827;
+  --accent: #3342ff;
+  --accent-2: #2ea44f;
+  --card-border: #e6e6ea;
+  --radius: 8px;
+  --gap: 28px;
+}
+
+/* scroll lin pentru ancore */
+html {
+  scroll-behavior: smooth;
+}
+
+/* evităm ca secțiunile să fie acoperite de header-ul fix */
+section {
+  scroll-margin-top: 84px;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background-color: var(--bg);
+  color: #222;
+  padding-top: 72px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.45;
+}
+
+/* container implicit */
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Mobile: spațiu egal la margini și aliniere coerentă
+   Consolidat aici (înlocuiește duplicatele care erau în fișier). */
+@media (max-width: 700px) {
+  body, .container {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+  section {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  h1, h2, h3, h4, h5, h6, p {
+    text-align: left !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  img {
+    display: block;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box;
+  }
+}

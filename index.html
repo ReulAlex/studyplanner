@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudyPlanner</title>
+    <link rel="stylesheet" href="css/landing.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Jost:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+       <div class="logo">Study <span>Planner</span></div>
+
+       <!-- mutat hamburger în interiorul header ca să rămână fix la scroll -->
+       <button
+         class="hamburger-menu js-menu-toggle-btn"
+         aria-label="Open mobile menu"
+         aria-expanded="false"
+       >
+         <span class="hamburger-menu__line"></span>
+         <span class="hamburger-menu__line"></span>
+         <span class="hamburger-menu__line"></span>
+       </button>
+
+       <nav class="nav" id="main-nav">
+          <button class="nav-close-btn" aria-label="Închide meniul">&times;</button>
+        <ul>
+            <li><a href="#hero">Tablou de bord</a></li>
+            <li><a href="#features">Caracteristici</a></li>
+            <li><a href="#results">Rezultate</a></li>
+            <li><a href="#testimonials">Recenzii</a></li>
+            <li><a href="#site-footer">Contacte</a></li>
+            </ul>
+             <div class="nav-btn">
+            <a class="btn-login" href="login.php">Loghează-te</a>
+            <a class="btn-signup" href="register.php">Înregistrează-te</a>
+            </div>
+       </nav>
+    </header>
+
+       <section id="hero" class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+            <h1>Organizează-ți studiile cu ușurință.</h1>
+            <p>Planifică-ți timpul, urmărește-ți progresul și atinge-ți obiectivele academice cu StudyPlanner. Organizează-ți sarcinile și examenele într-un mod simplu și eficient. Rămâi motivat și ai control asupra activităților tale zilnice.</p>
+            </div>
+            <a class="btn-get-started" href="register.php">Începe acum</a>
+        </div>
+        <div class="hero-img">
+            <img src="poze/landing/hero.png" alt="Study Planner">
+        </div>
+       </section>
+
+      <section id="features" class="features" aria-labelledby="features-title"> <div class="container features__wrap"> <!-- Intro (titlu + subtitlu) --> <div class="features__intro"> <p class="features__kicker">Caracteristici</p> <h2 id="features-title" class="features__heading">Ce oferă StudyPlanner</h2> <p class="features__lead">Fiecare sarcină are locul ei, nimic nu se pierde</p> </div> <!-- Grid cu carduri (3) --> <div class="features__grid"> <!-- Card 1 --> <article class="feature-card"> <div class="feature-card__media"> <img src="poze/landing/card1.png" alt="Organizarea temelor" loading="lazy"> </div> <div class="feature-card__body"> <p class="feature-card__tag">Sarcini</p> <h3 class="feature-card__title">Organizează-ți temele și examenele</h3> <p class="feature-card__text">Creează sarcini, stabilește deadline-uri și urmărește progresul pas cu pas.</p> <a href="#" class="feature-card__cta" aria-label="Explorează Organizează-ți temele"> Explorează <span class="feature-card__cta-arrow" aria-hidden="true">›</span> </a> </div> </article> <!-- Card 2 --> <article class="feature-card"> <div class="feature-card__media"> <img src="poze/landing/card2.png" alt="Progres" loading="lazy"> </div> <div class="feature-card__body"> <p class="feature-card__tag">Progres</p> <h3 class="feature-card__title">Vezi cât de departe ai ajuns</h3> <p class="feature-card__text">Statistici clare care arată ce ai terminat și ce îți mai rămâne.</p> <a href="#" class="feature-card__cta" aria-label="Explorează Progres"> Explorează <span class="feature-card__cta-arrow" aria-hidden="true">›</span> </a> </div> </article> <!-- Card 3 --> <article class="feature-card"> <div class="feature-card__media"> <img src="poze/landing/card3.png" alt="Calendar" loading="lazy"> </div> <div class="feature-card__body"> <p class="feature-card__tag">Calendar</p> <h3 class="feature-card__title">Nu rata niciun examen sau termen limită</h3> <p class="feature-card__text">Vizualizează toate evenimentele importante într-o privire.</p> <a href="#" class="feature-card__cta" aria-label="Explorează Calendar"> Explorează <span class="feature-card__cta-arrow" aria-hidden="true">›</span> </a> </div> </article> </div> </div> </section>
+
+
+<section id="results" class="results" aria-labelledby="results-title">
+  <div class="container results__wrap">
+    <div class="results__intro">
+      <div class="results__intro-left">
+        <p class="results__kicker">Rezultate</p>
+        <h2 id="results-title" class="results__heading">Studenții care folosesc StudyPlanner reușesc</h2>
+      </div>
+
+      <div class="results__intro-right">
+        <p class="results__lead">Mii de studenți și-au organizat studiul cu noi. Rezultatele vorbesc de la sine. Oamenii termină mai mult, stresează mai puțin.</p>
+        <div class="results__actions">
+          <a class="btn btn-green" href="register.php" role="button">Înregistrare</a>
+          <a class="btn btn-outline" href="#" role="button">Detalii <span aria-hidden="true">›</span></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="results__grid" role="list">
+      <article class="stat-card stat-card--big" role="listitem" aria-label="10K+ sarcini completate">
+        <div class="stat-card__number">10K+</div>
+        <div class="stat-card__meta">
+          <p class="stat-card__title">Sarcini completate</p>
+          <p class="stat-card__desc">Studenți care și‑au atins obiectivele</p>
+        </div>
+      </article>
+
+      <div class="stat-media" role="img" aria-label="Imagine exemplu" aria-hidden="false">
+        <img src="poze/landing/results-img1.png" alt="Student organizat" loading="lazy">
+      </div>
+
+      <article class="stat-card stat-card--highlight" role="listitem" aria-label="98% mulțumire">
+        <div class="stat-card__number">98%</div>
+        <div class="stat-card__meta">
+          <p class="stat-card__title">Mulțumit de platformă</p>
+          <p class="stat-card__desc">Feedback pozitiv de la cei care au încercat</p>
+        </div>
+      </article>
+
+      <article class="stat-card stat-card--medium" role="listitem" aria-label="5K+ utilizatori activi">
+        <div class="stat-card__number">5K+</div>
+        <div class="stat-card__meta">
+          <p class="stat-card__title">Utilizatori activi</p>
+          <p class="stat-card__desc">Oameni care se întorc zilnic pentru a‑și organiza ziua</p>
+        </div>
+      </article>
+
+      <div class="stat-media stat-media--wide" role="img" aria-label="Imagine exemplu 2" aria-hidden="false">
+        <img src="poze/landing/results-img2.png" alt="Statistici StudyPlanner" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+<section id="cta" class="cta" aria-labelledby="cta-title">
+  <div class="container">
+    <div class="cta__box">
+      <div class="cta__content">
+        <h2 id="cta-title" class="cta__heading">Începe astăzi, gratuit</h2>
+        <p class="cta__lead">Nu ai nevoie de card de credit. Doar înregistrează-te și organizează-ți studiul acum.</p>
+
+        <div class="cta__actions">
+          <a class="cta__btn cta__btn--primary" href="register.php" role="button">Înregistrare</a>
+          <a href="login.php" class="cta__btn cta__btn--outline" role="button">Autentificare</a>
+        </div>
+      </div>
+
+      <div class="cta__media" aria-hidden="false">
+        <img src="poze/landing/student-oraganizat.png" alt="Student organizat folosind StudyPlanner" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+<section id="testimonials" class="testimonials" aria-labelledby="testimonials-title">
+  <div class="container">
+    <header class="testimonials__intro">
+      <h2 id="testimonials-title" class="testimonials__heading">Ce spun studenții</h2>
+      <p class="testimonials__sub">Oameni reali, rezultate reale</p>
+    </header>
+
+    <ul class="testimonials__list" role="list">
+      <li class="testimonial-card" role="listitem">
+        <div class="testimonial-card__rating" aria-hidden="true">
+          <svg class="star" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.4 4.9 5.4.8-3.9 3.8.9 5.3L10 14.9 4.2 16.4l.9-5.3L1.2 7.3l5.4-.8L10 1.6z"/></svg>
+          <svg class="star" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.4 4.9 5.4.8-3.9 3.8.9 5.3L10 14.9 4.2 16.4l.9-5.3L1.2 7.3l5.4-.8L10 1.6z"/></svg>
+          <svg class="star" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.4 4.9 5.4.8-3.9 3.8.9 5.3L10 14.9 4.2 16.4l.9-5.3L1.2 7.3l5.4-.8L10 1.6z"/></svg>
+          <svg class="star" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.4 4.9 5.4.8-3.9 3.8.9 5.3L10 14.9 4.2 16.4l.9-5.3L1.2 7.3l5.4-.8L10 1.6z"/></svg>
+          <svg class="star" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.4 4.9 5.4.8-3.9 3.8.9 5.3L10 14.9 4.2 16.4l.9-5.3L1.2 7.3l5.4-.8L10 1.6z"/></svg>
+        </div>
+
+        <blockquote class="testimonial-card__quote">
+          „StudyPlanner m-a ajutat să mă gândesc clar la ce trebuie să fac, fără să mă pierd în detalii.”
+        </blockquote>
+
+        <footer class="testimonial-card__meta">
+          <img class="testimonial-card__avatar" src="poze/landing/avatar1.jpg" alt="" aria-hidden="true" loading="lazy">
+          <div class="testimonial-card__who">
+            <div class="testimonial-card__name">Nasalciuc Maria-Magdalena</div>
+            <div class="testimonial-card__role">Studentă, Chișinău</div>
+          </div>
+        </footer>
+      </li>
+
+      <li class="testimonial-card" role="listitem">
+        <div class="testimonial-card__rating" aria-hidden="true">
+          <svg class="star" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.4 4.9 5.4.8-3.9 3.8.9 5.3L10 14.9 4.2 16.4l.9-5.3L1.2 7.3l5.4-.8L10 1.6z"/></svg>
+          <svg class="star" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.4 4.9 5.4.8-3.9 3.8.9 5.3L10 14.9 4.2 16.4l.9-5.3L1.2 7.3l5.4-.8L10 1.6z"/></svg>
+          <svg class="star" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.4 4.9 5.4.8-3.9 3.8.9 5.3L10 14.9 4.2 16.4l.9-5.3L1.2 7.3l5.4-.8L10 1.6z"/></svg>
+          <svg class="star" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.4 4.9 5.4.8-3.9 3.8.9 5.3L10 14.9 4.2 16.4l.9-5.3L1.2 7.3l5.4-.8L10 1.6z"/></svg>
+          <svg class="star" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.4 4.9 5.4.8-3.9 3.8.9 5.3L10 14.9 4.2 16.4l.9-5.3L1.2 7.3l5.4-.8L10 1.6z"/></svg>
+        </div>
+
+        <blockquote class="testimonial-card__quote">
+          „Am terminat mai mult în mai puțin timp. Aplicația e simplă, nu te încurcă cu prea multe opțiuni.”
+        </blockquote>
+
+        <footer class="testimonial-card__meta">
+          <img class="testimonial-card__avatar" src="poze/landing/avatar2.jpg" alt="" aria-hidden="true" loading="lazy">
+          <div class="testimonial-card__who">
+            <div class="testimonial-card__name">Marjina Lilian</div>
+            <div class="testimonial-card__role">Student, Chișinău</div>
+          </div>
+        </footer>
+      </li>
+
+      <li class="testimonial-card" role="listitem">
+        <div class="testimonial-card__rating" aria-hidden="true">
+          <svg class="star" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.4 4.9 5.4.8-3.9 3.8.9 5.3L10 14.9 4.2 16.4l.9-5.3L1.2 7.3l5.4-.8L10 1.6z"/></svg>
+          <svg class="star" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.4 4.9 5.4.8-3.9 3.8.9 5.3L10 14.9 4.2 16.4l.9-5.3L1.2 7.3l5.4-.8L10 1.6z"/></svg>
+          <svg class="star" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.4 4.9 5.4.8-3.9 3.8.9 5.3L10 14.9 4.2 16.4l.9-5.3L1.2 7.3l5.4-.8L10 1.6z"/></svg>
+          <svg class="star" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.4 4.9 5.4.8-3.9 3.8.9 5.3L10 14.9 4.2 16.4l.9-5.3L1.2 7.3l5.4-.8L10 1.6z"/></svg>
+          <svg class="star" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.4 4.9 5.4.8-3.9 3.8.9 5.3L10 14.9 4.2 16.4l.9-5.3L1.2 7.3l5.4-.8L10 1.6z"/></svg>
+        </div>
+
+        <blockquote class="testimonial-card__quote">
+          „Examenele nu mai sunt o surpriză. Știu exact ce trebuie să fac și când trebuie să o fac.”
+        </blockquote>
+
+        <footer class="testimonial-card__meta">
+          <img class="testimonial-card__avatar" src="poze/landing/avatar3.jpg" alt="" aria-hidden="true" loading="lazy">
+          <div class="testimonial-card__who">
+            <div class="testimonial-card__name">Duca Alexandr</div>
+            <div class="testimonial-card__role">Student, Cahul</div>
+          </div>
+        </footer>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<footer id="site-footer" class="site-footer" role="contentinfo" aria-label="Footer StudyPlanner">
+  <div class="container site-footer__wrap">
+    <div class="site-footer__top">
+      <div class="footer-left">
+        <a class="logo" href="/" aria-label="StudyPlanner">
+          Study <span>Planner</span>
+        </a>
+        <p class="footer-copy">Organizează-ți studiul. Fără complicații.</p>
+      </div>
+
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <ul class="footer-nav__list">
+           <li><a class="footer-link" href="#hero">Tablou de bord</a></li>
+           <li><a class="footer-link" href="#features">Caracteristici</a></li>
+           <li><a class="footer-link" href="#results">Rezultate</a></li>
+           <li><a class="footer-link" href="#testimonials">Recenzii</a></li>
+           <li><a class="footer-link" href="#site-footer">Contacte</a></li>
+        </ul>
+      </nav>
+
+      <div class="footer-social" aria-label="Urmărește-ne">
+        <a href="#" class="social" aria-label="Facebook">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 12a10 10 0 10-11.5 9.9v-7h-2.2v-2.9h2.2V9.2c0-2.2 1.3-3.4 3.3-3.4.95 0 1.95.17 1.95.17v2.15h-1.1c-1.08 0-1.42.67-1.42 1.35v1.63h2.42l-.39 2.9h-2.03v7A10 10 0 0022 12z"/></svg>
+        </a>
+        <a href="#" class="social" aria-label="Instagram">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 7.2A4.8 4.8 0 1012 16.8 4.8 4.8 0 0012 7.2zm0 7.9a3.1 3.1 0 110-6.2 3.1 3.1 0 010 6.2zM17.8 6.3a1.1 1.1 0 11-2.2 0 1.1 1.1 0 012.2 0z"/><path d="M20 3H4a1 1 0 00-1 1v16a1 1 0 001 1h16a1 1 0 001-1V4a1 1 0 00-1-1zm-1 16H5V5h14v14z"/></svg>
+        </a>
+        <a href="#" class="social" aria-label="YouTube">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23 7.1s-.2-1.6-.8-2.3c-.8-.9-1.7-.9-2.1-1C16.6 3.5 12 3.5 12 3.5h-.1s-4.6 0-7.9.3c-.5 0-1.4.1-2.1 1C1.2 5.6 1 7.1 1 7.1S.8 9 .8 10.9v2.2C.8 15 1 16.9 1 16.9s.2 1.6.8 2.3c.8.9 1.9.9 2.4 1 1.8.2 7.2.3 7.2.3s4.6 0 7.9-.3c.5 0 1.4-.1 2.1-1 .6-.7.8-2.3.8-2.3s.2-2 .2-3.9v-2.2C23.2 9 23 7.1 23 7.1zM9.8 15.1V8.9L15.7 12l-5.9 3.1z"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="site-footer__bottom">
+      <small class="footer-legal">© <span id="year"></span> StudyPlanner. Toate drepturile rezervate.</small>
+      <div class="footer-legal-links">
+        <a href="#" class="footer-legal-link">Termeni</a>
+        <a href="#" class="footer-legal-link">Politică cookie</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="hamburger-menu.js"></script>
+<script src="slider.js"></script>
+</body>
+</html>

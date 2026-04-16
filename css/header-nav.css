@@ -1,0 +1,184 @@
+/* Close button for mobile nav */
+.nav-close-btn {
+  display: none;
+  position: absolute;
+  top: 14px;
+  right: 18px;
+  width: 36px;
+  height: 36px;
+  background: none;
+  border: none;
+  font-size: 32px;
+  color: #333;
+  cursor: pointer;
+  z-index: 1101;
+}
+
+/* Hamburger (mutat în header; rămâne fix odată cu header) */
+.hamburger-menu {
+  display: none;
+  position: absolute;
+  top: 18px;
+  right: 30px;
+  width: 44px;
+  height: 44px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1100;
+}
+.hamburger-menu__line {
+  display: block;
+  width: 28px;
+  height: 3px;
+  background: #333;
+  border-radius: 3px;
+  margin: 6px auto;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+  transition: background 0.2s, transform 0.15s;
+}
+.hamburger-menu:focus {
+  outline: 2px solid var(--accent-2);
+}
+
+/* Visible on small screens */
+@media (max-width: 1000px) {
+  .hamburger-menu {
+    display: block;
+  }
+}
+
+/* Mobile nav behavior:
+   - By default on mobile hide the nav lists/buttons and show only the hamburger.
+   - When the nav has the class .nav--mobile-open we show the mobile panel (full-width fixed under header).
+   - This keeps header clean (logo + hamburger) while preserving the desktop nav markup. */
+.nav--mobile-open {
+  display: none;
+}
+
+@media (max-width: 1000px) {
+  /* keep the nav element present (so JS can toggle classes),
+     but hide its internal links/buttons unless the mobile menu is opened */
+  .nav {
+    /* leave nav present but don't surface its children by default */
+    position: relative;
+    z-index: 1050;
+  }
+
+  /* hide nav content on mobile unless menu is open */
+  .nav > ul,
+  .nav .nav-btn {
+    display: none !important;
+  }
+
+  /* mobile open state: full panel, scrollable, below the fixed header */
+  .nav.nav--mobile-open {
+    display: flex !important;
+    flex-direction: column;
+    position: fixed;
+    top: 72px; /* imediat sub header */
+    right: 0;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 72px);
+    background: var(--surface);
+    box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+    z-index: 1050;
+    padding: 20px 0 24px 0;
+    gap: 16px;
+    overflow: auto;
+  }
+
+  .nav.nav--mobile-open ul {
+    display: flex !important;
+    flex-direction: column;
+    gap: 14px;
+    align-items: flex-start;
+    padding-left: 20px;
+    margin-bottom: 12px;
+    list-style: none;
+  }
+
+  .nav.nav--mobile-open .nav-btn {
+    display: flex !important;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 12px;
+    padding-left: 20px;
+  }
+
+  .nav.nav--mobile-open .nav-close-btn {
+    display: block;
+  }
+}
+
+/* Header (rămâne fix) */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 72px;
+  padding: 0 30px;
+  border-bottom: 1px solid #e5e5e5;
+  background: var(--surface);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 700;
+  color: #111;
+  font-family: 'Jost', sans-serif;
+  text-decoration: none;
+}
+.logo span {
+  color: var(--accent-2);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+/* lista de link-uri din nav */
+.nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+/* link-urile din nav */
+.nav a {
+  text-decoration: none;
+  color: #333;
+  display: inline-block;
+  padding: 8px;
+  border-radius: 6px;
+  font-size: 15px;
+}
+.nav a:hover,
+.nav a:focus {
+  background: rgba(46, 164, 79, 0.06);
+  color: #111;
+  outline: none;
+}
+
+.nav-btn {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+/* telefoane mici */
+@media (max-width: 600px) {
+  .logo { font-size: 20px; }
+  .nav-btn { gap: 8px; }
+}

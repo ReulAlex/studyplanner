@@ -1,0 +1,164 @@
+/* Testimonials / "Ce spun studenții" */
+
+.testimonials {
+  padding: 64px 0;
+}
+
+.testimonials__intro {
+  text-align: center;
+  margin-bottom: 34px;
+}
+.testimonials__heading {
+  font-size: 40px;
+  margin: 0 0 8px;
+  color: var(--text);
+  font-weight: 800;
+  line-height: 1.03;
+}
+.testimonials__sub {
+  color: var(--muted);
+  font-size: 14px;
+  margin: 0 auto;
+}
+
+/* Grid with three cards */
+.testimonials__list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--gap);
+  padding: 0;
+  margin: 0;
+}
+
+
+/* Card */
+.testimonial-card {
+  background: var(--surface);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-height: 220px;
+}
+
+/* Rating stars */
+.testimonial-card__rating {
+  display: inline-flex;
+  gap: 6px;
+  margin-bottom: 0; /* folosim gap în card, nu margin-bottom variabil */
+  color: var(--accent-2); /* stars color */
+}
+.star {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+  display: block;
+}
+
+/* Quote */
+.testimonial-card__quote {
+  font-size: 15px;
+  color: #0b0b0b;
+  margin: 0; /* eliminăm marja variabilă */
+  line-height: 1.45;
+  font-weight: 600;
+}
+
+/* Meta (avatar + name) */
+.testimonial-card__meta {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+/* Avatar - desktop/tablet: mai mari */
+.testimonial-card__avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  overflow: hidden;
+  aspect-ratio: 1 / 1;
+}
+
+/* grupăm nume+rol vertical */
+.testimonial-card__who {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  line-height: 1;
+}
+
+/* Nume și rol */
+.testimonial-card__name {
+  font-weight: 800;
+  font-size: 14px;
+  color: var(--text);
+  margin: 0;
+}
+.testimonial-card__role {
+  font-size: 13px;
+  color: var(--muted);
+  margin: 0;
+  font-weight: 600;
+}
+
+/* Hover / focus */
+.testimonial-card:hover,
+.testimonial-card:focus-within {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(16,24,40,0.06);
+  border-color: rgba(51,66,255,0.08);
+}
+
+/* Responsive: 2 columns then 1 column */
+@media (max-width: 1100px) {
+  .testimonials__list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--gap);
+  }
+  .testimonials__list > .testimonial-card:nth-child(3):last-child {
+    grid-column: 1 / -1;
+    justify-self: center;
+    max-width: calc((100% - var(--gap)) / 2);
+    width: 100%;
+  }
+}
+
+/* Mobile-specific fixes:
+   - Avatar puțin mai mare decât anterior pentru claritate (48px)
+   - Folosim selector mai specific și !important ca să învingem regula globală din base.css
+   - Păstrăm gap uniform între carduri
+*/
+@media (max-width: 700px) {
+  .testimonials__list {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .testimonials__list > .testimonial-card:nth-child(3):last-child {
+    grid-column: auto;
+    max-width: none;
+    width: 100%;
+  }
+  .testimonials__list img.testimonial-card__avatar {
+    width: 48px !important;
+    height: 48px !important;
+    border-radius: 50% !important;
+    object-fit: cover !important;
+    display: block !important;
+    overflow: hidden !important;
+    aspect-ratio: 1 / 1 !important;
+  }
+  .testimonials__heading { font-size: 28px; }
+  .testimonial-card__quote { font-size: 15px; }
+  .testimonial-card { padding: 18px; }
+  .testimonial-card__meta { gap: 10px; }
+}
+
+/* Respect user's reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .testimonial-card { transition: none; }
+}
