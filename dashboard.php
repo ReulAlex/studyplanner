@@ -1,6 +1,6 @@
 <?php
 session_start();
-include 'database/db_connection.php';
+include 'app/config/db_connection.php';
 
 if (!isset($_SESSION['user_id'])) {
     header("Location: login.php");
@@ -109,7 +109,7 @@ $today = date('Y-m-d');
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard - Study Planner</title>
-    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="assets/css/dashboard.css">
 </head>
 <body>
 
@@ -120,7 +120,7 @@ $today = date('Y-m-d');
 
     <div class="nav-right">
         <span class="welcome-text">Bun venit, <?php echo e($username); ?>!</span>
-        <a href="php/logout.php" class="logout-btn">Logout</a>
+        <a href="app/actions/logout.php" class="logout-btn">Logout</a>
     </div>
 </header>
 
@@ -162,7 +162,7 @@ $today = date('Y-m-d');
             <div class="card">
                 <h2 class="card-title">Adaugă task nou</h2>
 
-                <form action="php/add_task.php" method="POST" class="task-form">
+                <form action="app/actions/add_task.php" method="POST" class="task-form">
                     <label for="title">Titlu task</label>
                     <input type="text" id="title" name="title" placeholder="Ex: Finalizează laboratorul la SQL" required>
 
@@ -275,7 +275,7 @@ $today = date('Y-m-d');
                                 </div>
 
                                 <div class="task-actions">
-                                    <form action="php/update_task.php" method="POST" class="status-form">
+                                    <form action="app/actions/update_task.php" method="POST" class="status-form">
                                         <input type="hidden" name="task_id" value="<?php echo (int)$task['id']; ?>">
                                         <select name="new_status">
                                             <option value="de_facut" <?php echo $task['status'] === 'de_facut' ? 'selected' : ''; ?>>De făcut</option>
@@ -285,7 +285,7 @@ $today = date('Y-m-d');
                                         <button type="submit" class="small-btn update-btn">Actualizează</button>
                                     </form>
 
-                                    <form action="php/delete_task.php" method="POST" onsubmit="return confirm('Sigur vrei să ștergi acest task?');">
+                                    <form action="app/actions/delete_task.php" method="POST" onsubmit="return confirm('Sigur vrei să ștergi acest task?');">
                                         <input type="hidden" name="task_id" value="<?php echo (int)$task['id']; ?>">
                                         <button type="submit" class="delete-btn">Șterge</button>
                                     </form>

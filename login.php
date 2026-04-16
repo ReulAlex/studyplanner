@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Logare - Study Planner</title>
-    <link rel="stylesheet" href="css/login.css">
-    <link rel="stylesheet" href="css/landing.css">
-    <link rel="stylesheet" href="css/password.css">
+    <link rel="stylesheet" href="assets/css/login.css">
+    <link rel="stylesheet" href="assets/css/landing.css">
+    <link rel="stylesheet" href="assets/css/password.css">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Jost:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
@@ -50,7 +50,7 @@
             </div>
 
             <div class="login-right">
-                <form action="php/login.php" method="POST" class="login-form">
+                <form action="app/actions/login.php" method="POST" class="login-form">
                     <?php if (isset($_GET['error']) && $_GET['error'] == 'email'): ?>
                         <p class="message error-message">Email inexistent!</p>
                     <?php endif; ?>
@@ -84,6 +84,6 @@
         </div>
     </main>
 </body>
-<script src="hamburger-menu.js"></script>
-<script src="password-view.js"></script>
+<script src="assets/js/hamburger-menu.js"></script>
+<script src="assets/js/password-view.js"></script>
 </html>

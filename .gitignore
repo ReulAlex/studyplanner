@@ -1,5 +1,5 @@
 # Local database configuration
-database/db_config.php
+app/config/db_config.php
 
 # OS / editor files
 .DS_Store

@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Înregistrare - Study Planner</title>
-    <link rel="stylesheet" href="css/landing.css">
-    <link rel="stylesheet" href="css/register.css">
-    <link rel="stylesheet" href="css/password.css">
+    <link rel="stylesheet" href="assets/css/landing.css">
+    <link rel="stylesheet" href="assets/css/register.css">
+    <link rel="stylesheet" href="assets/css/password.css">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Jost:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
@@ -50,7 +50,7 @@
             </div>
 
             <div class="register-right">
-                <form action="php/register.php" method="POST" class="register-form">
+                <form action="app/actions/register.php" method="POST" class="register-form">
                     <label for="username">Nume utilizator</label>
                     <input type="text" id="username" name="username" placeholder="Introdu numele tău" required>
 
@@ -75,6 +75,6 @@
         </div>
     </main>
 </body>
-<script src="hamburger-menu.js"></script>
-<script src="password-view.js"></script>
+<script src="assets/js/hamburger-menu.js"></script>
+<script src="assets/js/password-view.js"></script>
 </html>

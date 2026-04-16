@@ -2,7 +2,7 @@
 $configPath = __DIR__ . '/db_config.php';
 
 if (!file_exists($configPath)) {
-    die('Lipseste fisierul de configurare a bazei de date. Copiaza database/db_config.example.php in database/db_config.php si completeaza valorile locale.');
+    die('Lipseste fisierul de configurare a bazei de date. Copiaza app/config/db_config.example.php in app/config/db_config.php si completeaza valorile locale.');
 }
 
 $config = require $configPath;
