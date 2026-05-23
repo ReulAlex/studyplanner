@@ -1,32 +1,32 @@
 # Study Planner
 
-Study Planner este o aplicatie web PHP pentru organizarea studiilor. Utilizatorii isi pot crea cont, se pot autentifica si isi pot gestiona taskurile intr-un dashboard simplu, cu deadline-uri, status si prioritati.
+Study Planner este o aplicatie web PHP + MySQL pentru organizarea studiilor. Aplicatia permite creare de cont, autentificare si administrarea taskurilor intr-un dashboard simplu, cu deadline-uri, status si prioritati.
 
-## Tehnologii folosite
+## Ce face
+
+- creare cont si logare
+- adaugare taskuri
+- actualizare status taskuri
+- stergere taskuri
+- afisare progres general
+- calendar cu deadline-uri
+
+## Tehnologii
 
 - PHP
 - MySQL
-- HTML, CSS, JavaScript
+- HTML
+- CSS
+- JavaScript
 - XAMPP pentru rulare locala
 
-## Cerinte locale
-
-- XAMPP instalat
-- Apache si MySQL pornite din XAMPP Control Panel
-- PHP 8.x recomandat
-- phpMyAdmin sau alt client MySQL
 ## Instalare locala
 
-1. Cloneaza repository-ul sau copiaza proiectul in `xampp/htdocs`.
-2. Deschide folderul proiectului astfel incat aplicatia sa fie disponibila la `http://localhost/Proiect de an/`.
-3. Creeaza baza de date `studyplanner_db` in MySQL si tabelele necesare.
+1. Copiaza proiectul in `xampp/htdocs`.
+2. Creeaza baza de date `studyplanner_db`.
+3. Importa fisierul `database/schema.sql`.
 4. Creeaza fisierul `app/config/db_config.php`.
-5. Completeaza in `app/config/db_config.php` datele locale de conectare la MySQL.
-6. Acceseaza `index.html` in browser.
-
-## Configurarea bazei de date
-
-Fisierul local folosit de aplicatie este `app/config/db_config.php`, iar acesta este ignorat de Git. Structura asteptata este:
+5. Adauga configurarea locala:
 
 ```php
 <?php
@@ -38,9 +38,21 @@ return [
 ];
 ```
 
-## Rulare
+6. Porneste `Apache` si `MySQL` din XAMPP.
+7. Acceseaza `http://localhost/Proiect de an/`.
 
-- Pagina principala: `index.html`
-- Inregistrare: `register.php`
-- Logare: `login.php`
-- Dashboard dupa autentificare: `dashboard.php`
+## Structura utila
+
+- `index.html` - pagina principala
+- `register.php` - inregistrare
+- `login.php` - autentificare
+- `dashboard.php` - dashboard utilizator
+- `app/actions` - actiuni pentru autentificare si taskuri
+- `app/config/db.php` - conexiune baza de date
+- `database/schema.sql` - schema bazei de date
+
+## Observatii
+
+- `app/config/db_config.php` este fisier local si nu se urca pe GitHub.
+- parola utilizatorului este stocata hash-uit.
+- formulararele folosesc protectie CSRF.
