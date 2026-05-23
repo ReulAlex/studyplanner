@@ -1,30 +1,37 @@
 <?php
-session_start();
-include '../config/db_connection.php';
+require_once __DIR__ . '/../lib/security.php';
+ensure_session_started();
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $email = $_POST["email"];
-    $password = $_POST["password"];
+require_once __DIR__ . '/../config/db.php';
 
-    $sql = "SELECT * FROM users WHERE email='$email'";
-    $result = $conn->query($sql);
-
-    if ($result->num_rows > 0) {
-        $user = $result->fetch_assoc();
-
-        if (password_verify($password, $user['password'])) {
-            $_SESSION['user_id'] = $user['id'];
-            $_SESSION['username'] = $user['username'];
-
-            header("Location: ../../dashboard.php");
-            exit();
-        } else {
-            header("Location: ../../login.php?error=parola");
-            exit();
-        }
-    } else {
-        header("Location: ../../login.php?error=email");
-        exit();
-    }
+if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+    redirect_to('../../login.php');
 }
-?>
+
+if (!verify_csrf_token($_POST['csrf_token'] ?? null)) {
+    redirect_to('../../login.php?error=csrf');
+}
+
+$email = post_value('email');
+$password = (string)($_POST['password'] ?? '');
+
+if (!filter_var($email, FILTER_VALIDATE_EMAIL) || $password === '') {
+    redirect_to('../../login.php?error=invalid');
+}
+
+$stmt = $conn->prepare('SELECT id, username, password FROM users WHERE email = ? LIMIT 1');
+$stmt->bind_param('s', $email);
+$stmt->execute();
+$result = $stmt->get_result();
+$user = $result->fetch_assoc();
+$stmt->close();
+
+if (!$user || !password_verify($password, $user['password'])) {
+    redirect_to('../../login.php?error=invalid');
+}
+
+session_regenerate_id(true);
+$_SESSION['user_id'] = (int)$user['id'];
+$_SESSION['username'] = $user['username'];
+
+redirect_to('../../dashboard.php');
